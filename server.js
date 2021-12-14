@@ -1,8 +1,7 @@
 const express = require('express');
 const path = require('path');
-const { clog } = require('./middleware/clog');
-const fs = require('fs');
 const api = require('./routes/index.js');
+// const { clog } = require('./middleware/clog');
 // const notes = require('./db/db.json');
 // const { v4: uuidv4 } = require('uuid');
 // Is this how to tap into the db.json file that the readme is talking about?
@@ -10,7 +9,7 @@ const api = require('./routes/index.js');
 
 const app = express();
 const PORT = process.env.PORT || 3101;
-app.use(clog);
+// app.use(clog);
 
 
 // Middleware
