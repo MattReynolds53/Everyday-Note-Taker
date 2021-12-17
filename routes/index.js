@@ -5,6 +5,6 @@ const apiRouter = require('./apiRoute');
 
 const app = express();
 
-app.use('/apiRoute', apiRouter);
+app.use('/notes', apiRouter);
 
 module.exports = app;
