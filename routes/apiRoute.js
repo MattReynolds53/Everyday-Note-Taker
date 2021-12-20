@@ -25,7 +25,7 @@ apiRoute.post('/', (req, res) => {
       };
   
       readAndAppend(newNote, './db/db.json');
-      res.json(notes);
+      res.json(newNote);
     } else {
       res.json('Error in posting feedback');
     }
@@ -48,31 +48,19 @@ apiRoute.delete('/:id',  (req, res) => {
     }
     )
     .then((json) => {
-      // Make a new array of all tips except the one with the ID provided in the URL
       const result = json.filter((note) => note.id !== noteID);
       console.log(noteID, "Note");
       console.log(result, "Result");
-      // Save that array to the filesystem
       writeToFile('./db/db.json', result);
 
       readFromFile("./db/db.json")
       .then((data) => res.json(JSON.parse(data)));
 
-      // Respond to the DELETE request
-    //   res.json(`Item ${noteId} has been deleted 🗑️`);
+      res.json(`Item has been deleted 🗑️`);
     });
     
 })
 
-
-//GET route for db.json file
-// apiRoute.get('/', (req, res) => 
-//     res.sendFile(path.join(__dirname, './db/db.json'));
-// );
-
-// apiRoute.get('/', (req, res) =>
-//   readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
-// );
 
 
 module.exports = apiRoute;

@@ -23,21 +23,13 @@ app.get('/notes', (req, res) =>
     res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
-
 // GET route for index.html page (from notes page)
 app.get('/', (req, res) =>
   res.sendFile(path.join(__dirname, '/public/index.html'))
 );
-
-// Create another GET route for uniqid in order to populate the note when you click on it. (All done in the notes-router)
-
-
-// Delete route example is on activity 28 under the tips.js file
 
 // Listen to PORT
 app.listen(PORT, () =>
   console.log(`App listening at http://localhost:${PORT} 🚀`)
 );
 
-
-// Notes: getting the information to show up on the left column is a get request. to get the notes information you enter saved is a post request. Use the pre-made front-end to hook into the left column to display the information from the db.json file after oyu save it to the db.json file
