@@ -2,10 +2,6 @@ const apiRoute = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
 const { readAndAppend, readFromFile, writeToFile } = require('../helpers/fsUtils');
 
- //Should be one get, one post, and one delete
-
-
-
 apiRoute.get("/", (req, res) => {
     readFromFile("./db/db.json")
     .then((data) => res.json(JSON.parse(data)));
@@ -55,8 +51,6 @@ apiRoute.delete('/:id',  (req, res) => {
 
       readFromFile("./db/db.json")
       .then((data) => res.json(JSON.parse(data)));
-
-      res.json(`Item has been deleted 🗑️`);
     });
     
 })
