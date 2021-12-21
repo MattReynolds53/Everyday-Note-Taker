@@ -10,4 +10,4 @@ This application requires express, and I utilized get, post, and delete requests
 
 GitHub Repository: https://github.com/MattReynolds53/Everyday-Note-Taker
 
-Heroku Link: https://guarded-earth-77285.herokuapp.com/notes
+Heroku Link: https://guarded-earth-77285.herokuapp.com/
